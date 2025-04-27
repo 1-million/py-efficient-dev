@@ -3,6 +3,8 @@ import json
 from mitmproxy import http
 from mitmproxy.tools.main import mitmdump
 
+import lcz_company
+
 
 def request(flow: http.HTTPFlow):
     # 在此处设置断点
@@ -10,49 +12,8 @@ def request(flow: http.HTTPFlow):
     pass
 
 
-def parse_rows(text):
-    data = json.loads(text)
-    rows = []
-    # 解析记录
-    for task in data["rowDataList"]:
-        task_id = task["r"]["task_id"]["v"]
-        task_title = task["r"]["task_title"]["v"]
-        priority = task["r"]["priority"]["v"]
-        dead_line = task["r"]["dead_line"]["v"]
-        row = (task_id, task_title, priority, dead_line)
-        rows.append(row)
-    return rows
-
-
-def format_rows(rows: ()):
-    strs = []
-    for row in rows:
-        s = f"【系统缺陷】- {row[0]} - {row[1]} : {row[2]} - {row[3]}"
-        print(s)
-        strs.append(s)
-    return strs
-
-
-def print_rows(rows):
-    print(f"---------------任务清单--START---------------")
-    for row in rows:
-        print(row)
-    print(f"---------------任务清单--END-----------------")
-
-
 def response(flow: http.HTTPFlow):
-    # 网盛数新办公平台系统
-    # 拦截 任务管理2.0查询返回结果 url:https://lcz.lczyun.com/creater/kapi/list/!fileKey
-    if flow.request.pretty_url.find("creater/kapi/list/!fileKey") > -1:
-        # 解析 将任务记录解析成指定格式并打印
-        if flow.response.status_code == 200:
-            pass
-            rows = parse_rows(flow.response.text)
-            print(rows)
-            f_rows = format_rows(rows)
-            print(f_rows)
-            print_rows(f_rows)
-
+    lcz_company.filter_url(flow)
     # print(f"请求:{flow.request.method}->{flow.request.pretty_url}")
     # print(f"响应:{flow.response.status_code}")
     # print(f"内容:{flow.response.text}")
