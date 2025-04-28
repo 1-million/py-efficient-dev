@@ -21,4 +21,6 @@ def response(flow: http.HTTPFlow):
 
 if __name__ == "__main__":
     # 运行 Mitmproxy，并传递命令行参数
-    mitmdump(['-s', __file__, '-p', '7777', '-q', '--mode', 'socks5'])
+    # mitmdump(['-s', __file__, '-p', '8888', '-q'])
+    mitmdump(['-s', __file__, '-r', '127.0.0.1:8888', '-q'])
+

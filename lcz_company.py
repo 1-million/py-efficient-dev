@@ -1,10 +1,8 @@
 import http
 import json
 
-from mitmproxy import flow
 
-
-def filter_url(flow: http.HTTPFlow):
+def filter_url(flow):
     # 网盛数新办公平台系统
     # 拦截 任务管理2.0查询返回结果 url:https://lcz.lczyun.com/creater/kapi/list/!fileKey
     if flow.request.pretty_url.find("creater/kapi/list/!fileKey") > -1:
