@@ -3,7 +3,9 @@ import json
 from mitmproxy import http
 from mitmproxy.tools.main import mitmdump
 
+import cnysTV
 import lcz_company
+import rktong
 
 
 def request(flow: http.HTTPFlow):
@@ -13,7 +15,9 @@ def request(flow: http.HTTPFlow):
 
 
 def response(flow: http.HTTPFlow):
-    lcz_company.filter_url(flow)
+    #lcz_company.filter_url(flow)
+    #rktong.filter_url(flow)
+    cnysTV.filter_url(flow)
     # print(f"请求:{flow.request.method}->{flow.request.pretty_url}")
     # print(f"响应:{flow.response.status_code}")
     # print(f"内容:{flow.response.text}")
