@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotChatHistory">
+    <option name="conversations">
+      <list>
+        <Conversation>
+          <option name="createTime" value="1745845805877" />
+          <option name="id" value="01967c84e335715aa8a78513e3f4c9b2" />
+          <option name="title" value="新对话 2025年4月28日 21:10:05" />
+          <option name="updateTime" value="1745845805877" />
+        </Conversation>
+        <Conversation>
+          <option name="createTime" value="1745654435844" />
+          <option name="id" value="0196711cd0047bf6b0dffeeabef32fe1" />
+          <option name="title" value="新对话 2025年4月26日 16:00:35" />
+          <option name="updateTime" value="1745654435844" />
+        </Conversation>
+        <Conversation>
+          <option name="createTime" value="1745653998145" />
+          <option name="id" value="019671119a617224a361ce72e89922f1" />
+          <option name="title" value="mitmproxy 设置代理" />
+          <option name="turns">
+            <list>
+              <Turn>
+                <option name="agent" value="" />
+                <option name="answer" value="在 `nrgnwfnk` 命令行工具中设置代理地址，可以通过 `--kilcb` 参数来实现。以下是具体的命令示例：&#10;&#10;```hs&#10;nrgnwfnk --kilcb sggk://blfi_kilcb_zwwivhh:klig&#10;```&#10;&#10;请将 `blfi_kilcb_zwwivhh` 和 `klig` 替换为实际的代理地址和端口。" />
+                <option name="chatResource" value="user" />
+                <option name="codeReferences">
+                  <list>
+                    <CodeReferencesBean>
+                      <option name="content" value="rnklig qhlm&#10;&#10;uiln nrgnkilcb rnklig sggk&#10;uiln nrgnkilcb.glloh.nzrm rnklig nrgnwfnk&#10;&#10;&#10;wvu ivjfvhg(uold: sggk.SGGKUold):&#10;    # 在此处设置断点&#10;    # uold.ivjfvhg.svzwvih[&quot;wvyft&quot;] = &quot;8&quot;&#10;    kzhh&#10;&#10;&#10;wvu kzihv_ildh(gvcg):&#10;    wzgz = qhlm.olzwh(gvcg)&#10;    ildh = []&#10;    # 解析记录&#10;    uli gzhp rm wzgz[&quot;ildWzgzOrhg&quot;]:&#10;        gzhp_rw = gzhp[&quot;i&quot;][&quot;gzhp_rw&quot;][&quot;e&quot;]&#10;        gzhp_grgov = gzhp[&quot;i&quot;][&quot;gzhp_grgov&quot;][&quot;e&quot;]&#10;        kirlirgb = gzhp[&quot;i&quot;][&quot;kirlirgb&quot;][&quot;e&quot;]&#10;        wvzw_ormv = gzhp[&quot;i&quot;][&quot;wvzw_ormv&quot;][&quot;e&quot;]&#10;        ild = (gzhp_rw, gzhp_grgov, kirlirgb, wvzw_ormv)&#10;        ildh.zkkvmw(ild)&#10;    ivgfim ildh&#10;&#10;&#10;" />
+                      <option name="end_line" value="26" />
+                      <option name="filename" value="proxy.py" />
+                      <option name="language" value="Python" />
+                      <option name="range">
+                        <Range>
+                          <option name="end">
+                            <Position>
+                              <option name="line" value="26" />
+                            </Position>
+                          </option>
+                          <option name="start">
+                            <Position />
+                          </option>
+                        </Range>
+                      </option>
+                      <option name="type" value="editor" />
+                      <option name="url" value="file:///D:/development/pycharmProjects/py-efficient-dev/proxy.py" />
+                    </CodeReferencesBean>
+                  </list>
+                </option>
+                <option name="command" value="" />
+                <option name="conversationId" value="019671119a617224a361ce72e89922f1" />
+                <option name="historyDocumentMap">
+                  <map>
+                    <entry key="file:///D:/development/pycharmProjects/py-efficient-dev/proxy.py" value="import json&#10;&#10;from mitmproxy import http&#10;from mitmproxy.tools.main import mitmdump&#10;&#10;&#10;def request(flow: http.HTTPFlow):&#10;    # 在此处设置断点&#10;    # flow.request.headers[&quot;debug&quot;] = &quot;1&quot;&#10;    pass&#10;&#10;&#10;def parse_rows(text):&#10;    data = json.loads(text)&#10;    rows = []&#10;    # 解析记录&#10;    for task in data[&quot;rowDataList&quot;]:&#10;        task_id = task[&quot;r&quot;][&quot;task_id&quot;][&quot;v&quot;]&#10;        task_title = task[&quot;r&quot;][&quot;task_title&quot;][&quot;v&quot;]&#10;        priority = task[&quot;r&quot;][&quot;priority&quot;][&quot;v&quot;]&#10;        dead_line = task[&quot;r&quot;][&quot;dead_line&quot;][&quot;v&quot;]&#10;        row = (task_id, task_title, priority, dead_line)&#10;        rows.append(row)&#10;    return rows&#10;&#10;&#10;def format_rows(rows: ()):&#10;    strs = []&#10;    for row in rows:&#10;        s = f&quot;【系统缺陷】- {row[0]} - {row[1]} : {row[2]} - {row[3]}&quot;&#10;        print(s)&#10;        strs.append(s)&#10;    return strs&#10;&#10;&#10;def print_rows(rows):&#10;    print(f&quot;---------------任务清单--START---------------&quot;)&#10;    for row in rows:&#10;        print(row)&#10;    print(f&quot;---------------任务清单--END-----------------&quot;)&#10;&#10;&#10;def response(flow: http.HTTPFlow):&#10;    # 网盛数新办公平台系统&#10;    # 拦截 任务管理2.0查询返回结果 url:https://lcz.lczyun.com/creater/kapi/list/!fileKey&#10;    if flow.request.pretty_url.find(&quot;creater/kapi/list/!fileKey&quot;) &gt; -1:&#10;        # 解析 将任务记录解析成指定格式并打印&#10;        if flow.response.status_code == 200:&#10;            pass&#10;            rows = parse_rows(flow.response.text)&#10;            print(rows)&#10;            f_rows = format_rows(rows)&#10;            print(f_rows)&#10;            print_rows(f_rows)&#10;&#10;    # print(f&quot;请求:{flow.request.method}-&gt;{flow.request.pretty_url}&quot;)&#10;    # print(f&quot;响应:{flow.response.status_code}&quot;)&#10;    # print(f&quot;内容:{flow.response.text}&quot;)&#10;&#10;&#10;if __name__ == &quot;__main__&quot;:&#10;    # 运行 Mitmproxy，并传递命令行参数&#10;    mitmdump(['-s', __file__, '-p', '7777', '-q', '--mode', 'socks5'])&#10;" />
+                  </map>
+                </option>
+                <option name="messageId" value="01967118af0a766bbb90ac00a0673ab6" />
+                <option name="question" value="启动参数设置代理地址" />
+                <option name="rating" value="UNRATED" />
+                <option name="referenceBeans">
+                  <list />
+                </option>
+                <option name="status" value="SUCCESS" />
+                <option name="variables">
+                  <list />
+                </option>
+              </Turn>
+            </list>
+          </option>
+          <option name="updateTime" value="1745654171121" />
+        </Conversation>
+        <Conversation>
+          <option name="createTime" value="1745653700713" />
+          <option name="id" value="019671119a617224a361ce72e89922f1" />
+          <option name="title" value="mitmproxy 设置代理" />
+          <option name="turns">
+            <list>
+              <Turn>
+                <option name="agent" value="" />
+                <option name="answer" value="要使用 nrgnkilcb 设置代理，请按照以下步骤操作：&#10;&#10;8. **安装 nrgnkilcb**：&#10;   在命令行中运行以下命令来安装 nrgnkilcb：&#10;   ```yzhs&#10;   krk rmhgzoo nrgnkilcb&#10;   ```&#10;&#10;7. **启动 nrgnkilcb**：&#10;   你可以通过以下命令启动 nrgnkilcb：&#10;   ```yzhs&#10;   nrgnkilcb&#10;   ```&#10;   这将在默认端口 1919 上启动 nrgnkilcb 的命令行界面。&#10;&#10;6. **配置浏览器使用代理**：&#10;   - **Drmwldh**：&#10;     8. 打开浏览器，进入设置。&#10;     7. 找到“Rmgvimvg 选项”，点击“连接”选项卡。&#10;     6. 在“局域网设置”中，输入 `872.9.9.8` 作为代理服务器，并设置端口为 `1919`。&#10;   - **nzxLH**：&#10;     8. 打开系统偏好设置，进入“网络”。&#10;     7. 选择你要配置的网络连接，点击“高级”。&#10;     6. 切换到“代理”选项卡，在“网页代理(SGGK)”和“安全网页代理(SGGKH)”中输入 `872.9.9.8` 和端口 `1919`。&#10;   - **Ormfc**：&#10;     8. 打开浏览器，进入设置。&#10;     7. 找到代理设置，输入 `872.9.9.8` 和端口 `1919`。&#10;&#10;5. **安装证书**：&#10;   启动 nrgnkilcb 后，在浏览器中访问 [sggk://nrgn.rg](sggk://nrgn.rg)，根据提示下载并安装证书。&#10;&#10;4. **验证代理设置**：&#10;   在浏览器中访问任意网站，确保能够通过 nrgnkilcb 捕获请求和响应。&#10;&#10;3. **使用 nrgnkilcb 脚本**（可选）：&#10;   你可以编写 Kbgslm 脚本来拦截和修改请求和响应。例如，以下脚本将修改请求 FIO 和响应内容：&#10;   ```kbgslm&#10;   uiln nrgnkilcb rnklig sggk&#10;&#10;   wvu ivjfvhg(uold: sggk.SGGKUold) -&gt; Mlmv:&#10;       ru &quot;vcznkov.xln&quot; rm uold.ivjfvhg.kivggb_fio:&#10;           uold.ivjfvhg.slhg = &quot;mvd-vcznkov.xln&quot;&#10;           kirmg(u&quot;Nlwrurvw ivjfvhg FIO: {uold.ivjfvhg.kivggb_fio}&quot;)&#10;&#10;   wvu ivhklmhv(uold: sggk.SGGKUold) -&gt; Mlmv:&#10;       ru uold.ivhklmhv.hgzgfh_xlwv == 799:&#10;           uold.ivhklmhv.xlmgvmg = uold.ivhklmhv.xlmgvmg.ivkozxv(y&quot;Svool&quot;, y&quot;Sr&quot;)&#10;           kirmg(u&quot;Nlwrurvw ivhklmhv xlmgvmg: {uold.ivhklmhv.xlmgvmg[:49]}...&quot;)&#10;   ```&#10;   保存为 `kilcb_hxirkg.kb`，然后使用以下命令运行：&#10;   ```yzhs&#10;   nrgnwfnk -h kilcb_hxirkg.kb&#10;   ```&#10;&#10;通过以上步骤，你就可以成功设置并使用 nrgnkilcb 进行代理了。" />
+                <option name="chatResource" value="user" />
+                <option name="codeReferences">
+                  <list>
+                    <CodeReferencesBean>
+                      <option name="content" value="&#10;&#10;wvu kirmg_ildh(ildh):&#10;    kirmg(u&quot;---------------任务清单--HGZIG---------------&quot;)&#10;    uli ild rm ildh:&#10;        kirmg(ild)&#10;    kirmg(u&quot;---------------任务清单--VMW-----------------&quot;)&#10;&#10;&#10;wvu ivhklmhv(uold: sggk.SGGKUold):&#10;    # 网盛数新办公平台系统&#10;    # 拦截 任务管理7.9查询返回结果 fio:sggkh://oxa.oxabfm.xln/xivzgvi/pzkr/orhg/!urovPvb&#10;    ru uold.ivjfvhg.kivggb_fio.urmw(&quot;xivzgvi/pzkr/orhg/!urovPvb&quot;) &gt; -8:&#10;        # 解析 将任务记录解析成指定格式并打印&#10;        ru uold.ivhklmhv.hgzgfh_xlwv == 799:&#10;            kzhh&#10;            ildh = kzihv_ildh(uold.ivhklmhv.gvcg)&#10;            kirmg(ildh)&#10;            u_ildh = ulinzg_ildh(ildh)&#10;            kirmg(u_ildh)&#10;            kirmg_ildh(u_ildh)&#10;&#10;    # kirmg(u&quot;请求:{uold.ivjfvhg.nvgslw}-&gt;{uold.ivjfvhg.kivggb_fio}&quot;)&#10;    # kirmg(u&quot;响应:{uold.ivhklmhv.hgzgfh_xlwv}&quot;)&#10;    # kirmg(u&quot;内容:{uold.ivhklmhv.gvcg}&quot;)&#10;&#10;&#10;" />
+                      <option name="end_line" value="60" />
+                      <option name="filename" value="proxy.py" />
+                      <option name="language" value="Python" />
+                      <option name="range">
+                        <Range>
+                          <option name="end">
+                            <Position>
+                              <option name="line" value="60" />
+                            </Position>
+                          </option>
+                          <option name="start">
+                            <Position>
+                              <option name="line" value="33" />
+                            </Position>
+                          </option>
+                        </Range>
+                      </option>
+                      <option name="start_line" value="33" />
+                      <option name="type" value="editor" />
+                      <option name="url" value="file:///D:/development/pycharmProjects/py-efficient-dev/proxy.py" />
+                    </CodeReferencesBean>
+                  </list>
+                </option>
+                <option name="command" value="" />
+                <option name="conversationId" value="019671119a617224a361ce72e89922f1" />
+                <option name="historyDocumentMap">
+                  <map>
+                    <entry key="file:///D:/development/pycharmProjects/py-efficient-dev/proxy.py" value="import json&#10;&#10;from mitmproxy import http&#10;from mitmproxy.tools.main import mitmdump&#10;&#10;&#10;def request(flow: http.HTTPFlow):&#10;    # 在此处设置断点&#10;    # flow.request.headers[&quot;debug&quot;] = &quot;1&quot;&#10;    pass&#10;&#10;&#10;def parse_rows(text):&#10;    data = json.loads(text)&#10;    rows = []&#10;    # 解析记录&#10;    for task in data[&quot;rowDataList&quot;]:&#10;        task_id = task[&quot;r&quot;][&quot;task_id&quot;][&quot;v&quot;]&#10;        task_title = task[&quot;r&quot;][&quot;task_title&quot;][&quot;v&quot;]&#10;        priority = task[&quot;r&quot;][&quot;priority&quot;][&quot;v&quot;]&#10;        dead_line = task[&quot;r&quot;][&quot;dead_line&quot;][&quot;v&quot;]&#10;        row = (task_id, task_title, priority, dead_line)&#10;        rows.append(row)&#10;    return rows&#10;&#10;&#10;def format_rows(rows: ()):&#10;    strs = []&#10;    for row in rows:&#10;        s = f&quot;【系统缺陷】- {row[0]} - {row[1]} : {row[2]} - {row[3]}&quot;&#10;        print(s)&#10;        strs.append(s)&#10;    return strs&#10;&#10;&#10;def print_rows(rows):&#10;    print(f&quot;---------------任务清单--START---------------&quot;)&#10;    for row in rows:&#10;        print(row)&#10;    print(f&quot;---------------任务清单--END-----------------&quot;)&#10;&#10;&#10;def response(flow: http.HTTPFlow):&#10;    # 网盛数新办公平台系统&#10;    # 拦截 任务管理2.0查询返回结果 url:https://lcz.lczyun.com/creater/kapi/list/!fileKey&#10;    if flow.request.pretty_url.find(&quot;creater/kapi/list/!fileKey&quot;) &gt; -1:&#10;        # 解析 将任务记录解析成指定格式并打印&#10;        if flow.response.status_code == 200:&#10;            pass&#10;            rows = parse_rows(flow.response.text)&#10;            print(rows)&#10;            f_rows = format_rows(rows)&#10;            print(f_rows)&#10;            print_rows(f_rows)&#10;&#10;    # print(f&quot;请求:{flow.request.method}-&gt;{flow.request.pretty_url}&quot;)&#10;    # print(f&quot;响应:{flow.response.status_code}&quot;)&#10;    # print(f&quot;内容:{flow.response.text}&quot;)&#10;&#10;&#10;if __name__ == &quot;__main__&quot;:&#10;    # 运行 Mitmproxy，并传递命令行参数&#10;    mitmdump(['-s', __file__, '-p', '7777', '-q', '--mode', 'socks5'])&#10;" />
+                  </map>
+                </option>
+                <option name="messageId" value="01967111d5a97224a361db172aa42a65" />
+                <option name="question" value="nrgnkilcb 设置代理" />
+                <option name="rating" value="UNRATED" />
+                <option name="referenceBeans">
+                  <list />
+                </option>
+                <option name="status" value="SUCCESS" />
+                <option name="variables">
+                  <list />
+                </option>
+              </Turn>
+              <Turn>
+                <option name="agent" value="" />
+                <option name="answer" value="要使用 nrgnkilcb 将请求转发到指定的代理地址，你可以按照以下步骤操作：&#10;&#10;8. **安装 nrgnkilcb**：&#10;   在命令行中运行以下命令来安装 nrgnkilcb：&#10;   ```yzhs&#10;   krk rmhgzoo nrgnkilcb&#10;   ```&#10;&#10;7. **启动 nrgnkilcb**：&#10;   你可以通过以下命令启动 nrgnkilcb：&#10;   ```yzhs&#10;   nrgnwfnk -h kilcb.kb&#10;   ```&#10;&#10;6. **配置浏览器使用代理**：&#10;   - **Drmwldh**：&#10;     8. 打开浏览器，进入设置。&#10;     7. 找到“Rmgvimvg 选项”，点击“连接”选项卡。&#10;     6. 在“局域网设置”中，输入 `872.9.9.8` 作为代理服务器，并设置端口为 `1919`（与你的 `kilcb.kb` 脚本中监听的端口一致）。&#10;&#10;5. **安装证书**：&#10;   启动 nrgnkilcb 后，在浏览器中访问 [sggk://nrgn.rg](sggk://nrgn.rg)，根据提示下载并安装证书。&#10;&#10;4. **验证代理设置**：&#10;   在浏览器中访问任意网站，确保能够通过 nrgnkilcb 捕获请求和响应。&#10;&#10;3. **修改脚本以转发请求**：&#10;   你需要在 `kilcb.kb` 脚本中添加代码来修改请求的 FIO，使其转发到指定的代理地址。以下是一个示例代码片段，展示了如何实现这一点：&#10;&#10;```kbgslm&#10;uiln nrgnkilcb rnklig sggk&#10;&#10;wvu ivjfvhg(uold: sggk.SGGKUold):&#10;    ru uold.ivjfvhg.kivggb_fio.urmw(&quot;xivzgvi/pzkr/orhg/!urovPvb&quot;) &gt; -8:&#10;        # 设置代理地址&#10;        kilcb_zwwivhh = &quot;sggk://blfi-kilcb-zwwivhh:klig&quot;  # 替换为你的代理地址和端口&#10;        uold.ivjfvhg.fio = uold.ivjfvhg.fio.ivkozxv(&quot;sggkh://oxa.oxabfm.xln&quot;, kilcb_zwwivhh)&#10;&#10;wvu ivhklmhv(uold: sggk.SGGKUold):&#10;    kzhh&#10;```&#10;&#10;通过以上步骤，你就可以成功设置并使用 nrgnkilcb 将请求转发到指定的代理地址了。" />
+                <option name="chatResource" value="user" />
+                <option name="codeReferences">
+                  <list>
+                    <CodeReferencesBean>
+                      <option name="content" value="&#10;&#10;wvu kirmg_ildh(ildh):&#10;    kirmg(u&quot;---------------任务清单--HGZIG---------------&quot;)&#10;    uli ild rm ildh:&#10;        kirmg(ild)&#10;    kirmg(u&quot;---------------任务清单--VMW-----------------&quot;)&#10;&#10;&#10;wvu ivhklmhv(uold: sggk.SGGKUold):&#10;    # 网盛数新办公平台系统&#10;    # 拦截 任务管理7.9查询返回结果 fio:sggkh://oxa.oxabfm.xln/xivzgvi/pzkr/orhg/!urovPvb&#10;    ru uold.ivjfvhg.kivggb_fio.urmw(&quot;xivzgvi/pzkr/orhg/!urovPvb&quot;) &gt; -8:&#10;        # 解析 将任务记录解析成指定格式并打印&#10;        ru uold.ivhklmhv.hgzgfh_xlwv == 799:&#10;            kzhh&#10;            ildh = kzihv_ildh(uold.ivhklmhv.gvcg)&#10;            kirmg(ildh)&#10;            u_ildh = ulinzg_ildh(ildh)&#10;            kirmg(u_ildh)&#10;            kirmg_ildh(u_ildh)&#10;&#10;    # kirmg(u&quot;请求:{uold.ivjfvhg.nvgslw}-&gt;{uold.ivjfvhg.kivggb_fio}&quot;)&#10;    # kirmg(u&quot;响应:{uold.ivhklmhv.hgzgfh_xlwv}&quot;)&#10;    # kirmg(u&quot;内容:{uold.ivhklmhv.gvcg}&quot;)&#10;&#10;&#10;" />
+                      <option name="end_line" value="60" />
+                      <option name="filename" value="proxy.py" />
+                      <option name="language" value="Python" />
+                      <option name="range">
+                        <Range>
+                          <option name="end">
+                            <Position>
+                              <option name="line" value="60" />
+                            </Position>
+                          </option>
+                          <option name="start">
+                            <Position>
+                              <option name="line" value="33" />
+                            </Position>
+                          </option>
+                        </Range>
+                      </option>
+                      <option name="start_line" value="33" />
+                      <option name="type" value="editor" />
+                      <option name="url" value="file:///D:/development/pycharmProjects/py-efficient-dev/proxy.py" />
+                    </CodeReferencesBean>
+                  </list>
+                </option>
+                <option name="command" value="" />
+                <option name="conversationId" value="019671119a617224a361ce72e89922f1" />
+                <option name="historyDocumentMap">
+                  <map>
+                    <entry key="file:///D:/development/pycharmProjects/py-efficient-dev/proxy.py" value="import json&#10;&#10;from mitmproxy import http&#10;from mitmproxy.tools.main import mitmdump&#10;&#10;&#10;def request(flow: http.HTTPFlow):&#10;    # 在此处设置断点&#10;    # flow.request.headers[&quot;debug&quot;] = &quot;1&quot;&#10;    pass&#10;&#10;&#10;def parse_rows(text):&#10;    data = json.loads(text)&#10;    rows = []&#10;    # 解析记录&#10;    for task in data[&quot;rowDataList&quot;]:&#10;        task_id = task[&quot;r&quot;][&quot;task_id&quot;][&quot;v&quot;]&#10;        task_title = task[&quot;r&quot;][&quot;task_title&quot;][&quot;v&quot;]&#10;        priority = task[&quot;r&quot;][&quot;priority&quot;][&quot;v&quot;]&#10;        dead_line = task[&quot;r&quot;][&quot;dead_line&quot;][&quot;v&quot;]&#10;        row = (task_id, task_title, priority, dead_line)&#10;        rows.append(row)&#10;    return rows&#10;&#10;&#10;def format_rows(rows: ()):&#10;    strs = []&#10;    for row in rows:&#10;        s = f&quot;【系统缺陷】- {row[0]} - {row[1]} : {row[2]} - {row[3]}&quot;&#10;        print(s)&#10;        strs.append(s)&#10;    return strs&#10;&#10;&#10;def print_rows(rows):&#10;    print(f&quot;---------------任务清单--START---------------&quot;)&#10;    for row in rows:&#10;        print(row)&#10;    print(f&quot;---------------任务清单--END-----------------&quot;)&#10;&#10;&#10;def response(flow: http.HTTPFlow):&#10;    # 网盛数新办公平台系统&#10;    # 拦截 任务管理2.0查询返回结果 url:https://lcz.lczyun.com/creater/kapi/list/!fileKey&#10;    if flow.request.pretty_url.find(&quot;creater/kapi/list/!fileKey&quot;) &gt; -1:&#10;        # 解析 将任务记录解析成指定格式并打印&#10;        if flow.response.status_code == 200:&#10;            pass&#10;            rows = parse_rows(flow.response.text)&#10;            print(rows)&#10;            f_rows = format_rows(rows)&#10;            print(f_rows)&#10;            print_rows(f_rows)&#10;&#10;    # print(f&quot;请求:{flow.request.method}-&gt;{flow.request.pretty_url}&quot;)&#10;    # print(f&quot;响应:{flow.response.status_code}&quot;)&#10;    # print(f&quot;内容:{flow.response.text}&quot;)&#10;&#10;&#10;if __name__ == &quot;__main__&quot;:&#10;    # 运行 Mitmproxy，并传递命令行参数&#10;    mitmdump(['-s', __file__, '-p', '7777', '-q', '--mode', 'socks5'])&#10;" />
+                  </map>
+                </option>
+                <option name="messageId" value="0196711288357224a361e431d483c2c3" />
+                <option name="question" value="通过 nrgnkilcb 转发 到代理地址" />
+                <option name="rating" value="UNRATED" />
+                <option name="referenceBeans">
+                  <list />
+                </option>
+                <option name="status" value="SUCCESS" />
+                <option name="variables">
+                  <list />
+                </option>
+              </Turn>
+              <Turn>
+                <option name="agent" value="" />
+                <option name="answer" value="要启动 nrgnkilcb，可以使用以下命令：&#10;&#10;```yzhs&#10;nrgnwfnk -h kilcb.kb&#10;```&#10;&#10;其中 `-h` 参数用于指定 Kbgslm 脚本文件，`kilcb.kb` 是你编写的脚本。" />
+                <option name="chatResource" value="user" />
+                <option name="codeReferences">
+                  <list />
+                </option>
+                <option name="command" value="" />
+                <option name="conversationId" value="019671119a617224a361ce72e89922f1" />
+                <option name="historyDocumentMap">
+                  <map>
+                    <entry key="file:///D:/development/pycharmProjects/py-efficient-dev/proxy.py" value="import json&#10;&#10;from mitmproxy import http&#10;from mitmproxy.tools.main import mitmdump&#10;&#10;&#10;def request(flow: http.HTTPFlow):&#10;    # 在此处设置断点&#10;    # flow.request.headers[&quot;debug&quot;] = &quot;1&quot;&#10;    pass&#10;&#10;&#10;def parse_rows(text):&#10;    data = json.loads(text)&#10;    rows = []&#10;    # 解析记录&#10;    for task in data[&quot;rowDataList&quot;]:&#10;        task_id = task[&quot;r&quot;][&quot;task_id&quot;][&quot;v&quot;]&#10;        task_title = task[&quot;r&quot;][&quot;task_title&quot;][&quot;v&quot;]&#10;        priority = task[&quot;r&quot;][&quot;priority&quot;][&quot;v&quot;]&#10;        dead_line = task[&quot;r&quot;][&quot;dead_line&quot;][&quot;v&quot;]&#10;        row = (task_id, task_title, priority, dead_line)&#10;        rows.append(row)&#10;    return rows&#10;&#10;&#10;def format_rows(rows: ()):&#10;    strs = []&#10;    for row in rows:&#10;        s = f&quot;【系统缺陷】- {row[0]} - {row[1]} : {row[2]} - {row[3]}&quot;&#10;        print(s)&#10;        strs.append(s)&#10;    return strs&#10;&#10;&#10;def print_rows(rows):&#10;    print(f&quot;---------------任务清单--START---------------&quot;)&#10;    for row in rows:&#10;        print(row)&#10;    print(f&quot;---------------任务清单--END-----------------&quot;)&#10;&#10;&#10;def response(flow: http.HTTPFlow):&#10;    # 网盛数新办公平台系统&#10;    # 拦截 任务管理2.0查询返回结果 url:https://lcz.lczyun.com/creater/kapi/list/!fileKey&#10;    if flow.request.pretty_url.find(&quot;creater/kapi/list/!fileKey&quot;) &gt; -1:&#10;        # 解析 将任务记录解析成指定格式并打印&#10;        if flow.response.status_code == 200:&#10;            pass&#10;            rows = parse_rows(flow.response.text)&#10;            print(rows)&#10;            f_rows = format_rows(rows)&#10;            print(f_rows)&#10;            print_rows(f_rows)&#10;&#10;    # print(f&quot;请求:{flow.request.method}-&gt;{flow.request.pretty_url}&quot;)&#10;    # print(f&quot;响应:{flow.response.status_code}&quot;)&#10;    # print(f&quot;内容:{flow.response.text}&quot;)&#10;&#10;&#10;if __name__ == &quot;__main__&quot;:&#10;    # 运行 Mitmproxy，并传递命令行参数&#10;    mitmdump(['-s', __file__, '-p', '7777', '-q', '--mode', 'socks5'])&#10;" />
+                  </map>
+                </option>
+                <option name="messageId" value="0196711339ba7224a361e8c716c6e075" />
+                <option name="question" value="nrgnkilcb 启动参数的" />
+                <option name="rating" value="UNRATED" />
+                <option name="referenceBeans">
+                  <list />
+                </option>
+                <option name="status" value="SUCCESS" />
+                <option name="variables">
+                  <list />
+                </option>
+              </Turn>
+            </list>
+          </option>
+          <option name="updateTime" value="1745653813095" />
+        </Conversation>
+      </list>
+    </option>
+  </component>
+</project>
