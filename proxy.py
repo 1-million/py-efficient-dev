@@ -5,20 +5,25 @@ from mitmproxy.tools.main import mitmdump
 
 import cnysTV
 import lcz_company
+import m3u8
 import rktong
 
 
 def request(flow: http.HTTPFlow):
     # 在此处设置断点
     # flow.request.headers["debug"] = "1"
+    m3u8.filter_url(flow)
     pass
 
 
 def response(flow: http.HTTPFlow):
-    lcz_company.filter_url(flow)
+    pass
+    # import re
+    # pattern = re.compile("https?:.+m3u8[^\s]+.m3u8")
+    #lcz_company.filter_url(flow)
     #rktong.filter_url(flow)
     #cnysTV.filter_url(flow)
-    print(f"请求:{flow.request.method}->{flow.request.pretty_url}")
+    #print(f"请求:{flow.request.method}->{flow.request.pretty_url}")
     # print(f"响应:{flow.response.status_code}")
     # print(f"内容:{flow.response.text}")
 

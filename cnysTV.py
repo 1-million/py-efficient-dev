@@ -1,6 +1,10 @@
+import re
+
+
 def filter_url(flow):
     if flow.request.pretty_url.find("cnys.tv") > -1:
         flow.response.text = flow.response.text.replace("setInterval(loop, 1);", "console.log('debug');")
+        print(re.match("(.*)cnys.tv(.*)", flow.request.pretty_url))
     if flow.request.pretty_url.find("addons/dp/player/js/player.js") > -1:
         flow.response.headers.update({"content-type": "application/javascript; charset=utf-8"})
         flow.response.text = flow.response.text.replace(
