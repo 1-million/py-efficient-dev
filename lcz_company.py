@@ -2,6 +2,12 @@ import http
 import json
 
 
+def write_file(rows):
+    with open("task.txt", "w", encoding='utf-8') as file:
+        for row in rows:
+            file.write(f"{row}\n")
+
+
 def filter_url(flow):
     # 网盛数新办公平台系统
     # 拦截 任务管理2.0查询返回结果 url:https://lcz.lczyun.com/creater/kapi/list/!fileKey
@@ -14,6 +20,7 @@ def filter_url(flow):
             f_rows = format_rows(rows)
             print(f_rows)
             print_rows(f_rows)
+            write_file(f_rows)
 
 
 def parse_rows(text):
